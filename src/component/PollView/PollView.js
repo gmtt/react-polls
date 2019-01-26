@@ -29,11 +29,9 @@ class PollView extends React.Component {
             )
         }
         return (
-            <Paper>
                 <List component='nav' className={classes.List}>
                     {buttons}
                 </List>
-            </Paper>
         )
     }
 }

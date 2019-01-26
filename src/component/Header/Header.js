@@ -12,11 +12,11 @@ class Header extends React.Component {
 
     render() {
         return (
-                <AppBar>
-                    <Typography variant='h6' color='inherit'>
-                        Polls
-                    </Typography>
-                </AppBar>
+            <AppBar>
+                <Typography variant='h6' color='inherit'>
+                    Polls
+                </Typography>
+            </AppBar>
         )
     }
 }

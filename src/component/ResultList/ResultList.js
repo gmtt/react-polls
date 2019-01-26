@@ -1,14 +1,22 @@
 import * as React from "react";
 import {Doughnut} from "react-chartjs-2";
-import {getSummary} from "../PollView/action";
 import {connect} from "react-redux";
 import * as PropTypes from "prop-types";
 import {List, ListItem} from "@material-ui/core";
+import {getSummary} from "../PollView/action";
 
 class ResultList extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            timer: null
+        };
         this.props.getSummary();
+    }
+
+    componentDidMount() {
+        let timer = setInterval(this.props.getSummary, 1000);
+        this.setState({timer})
     }
 
     render() {
@@ -54,7 +62,7 @@ class ResultList extends React.Component {
 ResultList.propTypes = {
     getSummary: PropTypes.func.isRequired,
     entities: PropTypes.arrayOf(PropTypes.array),
-    summary: PropTypes.array
+    summary: PropTypes.array,
 };
 
 const mapStateToProps = (state) => ({
