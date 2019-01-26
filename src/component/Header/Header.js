@@ -12,8 +12,8 @@ class Header extends React.Component {
 
     render() {
         return (
-            <AppBar>
-                <Typography variant='h6' color='inherit'>
+            <AppBar position='relative'>
+                <Typography variant='h4' color='inherit' align='center'>
                     Polls
                 </Typography>
             </AppBar>

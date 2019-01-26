@@ -6,6 +6,7 @@ import * as PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {checkUser, upload} from "./component/PollView/action";
 import PollView from "./component/PollView/PollView";
+import Grid from "@material-ui/core/Grid";
 
 class App extends Component {
     constructor(props) {
@@ -25,10 +26,14 @@ class App extends Component {
             content = <PollView/>
         }
         return (
-            <Paper>
-                <Header/>
-                {content}
-            </Paper>
+            <Grid container alignItems='center' justify='center'>
+                <Grid item lg={4} sm={8} xs={12}>
+                    <Paper>
+                        <Header/>
+                        {content}
+                    </Paper>
+                </Grid>
+            </Grid>
         );
     }
 }

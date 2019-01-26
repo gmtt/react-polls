@@ -1,21 +1,13 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import {ListItemText, Paper, withStyles} from "@material-ui/core";
+import {ListItemText} from "@material-ui/core";
 import {selected_add} from "./action";
 import {connect} from "react-redux";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 
-const styles = theme => ({
-    List: {
-        marginTop: '3rem'
-    }
-});
-
 class PollView extends React.Component {
     render() {
-        const {classes} = this.props;
-
         let entity = this.props.nextEntity;
         let buttons = [];
         for (let index in entity) {
@@ -24,14 +16,14 @@ class PollView extends React.Component {
                           onClick={() => this.props.selected_add(entity[index])}
                           button
                 >
-                    <ListItemText primary={entity[index]}/>
+                    <ListItemText primary={entity[index]} align='center'/>
                 </ListItem>
             )
         }
         return (
-                <List component='nav' className={classes.List}>
-                    {buttons}
-                </List>
+            <List component='nav'>
+                {buttons}
+            </List>
         )
     }
 }
@@ -50,5 +42,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-    withStyles(styles)(PollView)
+    PollView
 );

@@ -8,7 +8,11 @@ import {store} from "./store/store";
 import {createMuiTheme} from "@material-ui/core";
 import {MuiThemeProvider} from "@material-ui/core";
 
-const theme = createMuiTheme({});
+const theme = createMuiTheme({
+    overrides: {
+
+    }
+});
 
 ReactDOM.render(
     <Provider store={store}>

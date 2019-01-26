@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import * as PropTypes from "prop-types";
 import {List, ListItem} from "@material-ui/core";
 import {getSummary} from "../PollView/action";
+import Divider from "@material-ui/core/Divider";
 
 class ResultList extends React.Component {
     constructor(props) {
@@ -27,7 +28,8 @@ class ResultList extends React.Component {
 
         let listItems = [];
         let key = 0;
-        for (let entity of this.props.entities) {
+        let {entities} = this.props;
+        for (let entity of entities) {
             let num = [];
             for (let label of entity) {
                 if (summary.hasOwnProperty(label)) {
@@ -47,12 +49,15 @@ class ResultList extends React.Component {
                 <ListItem key={key++}>
                     <Doughnut data={data}/>
                 </ListItem>
-            )
+            );
+            if (entity !== entities[entities.length-1]){
+                listItems.push(<Divider key={key++}/>)
+            }
         }
 
 
         return (
-            <List component='nav'>
+            <List>
                 {listItems}
             </List>
         )
