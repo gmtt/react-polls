@@ -5,7 +5,7 @@ export const selected_add = (selected) => ({
     selected
 });
 
-export const BASE_URL = 'http://localhost:3000/api';
+export const BASE_URL = 'https://glossy-window-229523.appspot.com/api';
 
 export const init = () => (dispatch) => {
     dispatch({type: 'FETCH_ENTITIES'});
