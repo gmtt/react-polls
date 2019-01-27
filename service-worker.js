@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-polls/precache-manifest.ef628388bbec653f5f5f24a2621f5678.js"
+  "/react-polls/precache-manifest.e0783665ae497739de2c33a9ba0d818e.js"
 );
 
 workbox.clientsClaim();
