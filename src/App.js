@@ -11,7 +11,7 @@ import Grid from "@material-ui/core/Grid";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.props.checkUser(this.props.ip)
+        this.props.checkUser()
     }
 
     render() {
@@ -58,7 +58,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    checkUser: (ip) => checkUser(ip)(dispatch),
+    checkUser: () => checkUser()(dispatch),
     upload: (selected, ip) => upload(selected, ip)(dispatch),
 });
 

@@ -57,7 +57,7 @@ export const getSummary = () => (dispatch) => {
 };
 
 export const checkUser = () => (dispatch) => {
-    fetch("https://json.geoiplookup.io/api")
+    fetch("https://ifconfig.me/all.json")
         .then(res => {
             if (res.status >= 400) {
                 throw new Error(res.body);
@@ -65,7 +65,7 @@ export const checkUser = () => (dispatch) => {
                 return res.json();
             }
         }).then(data => {
-        let ip = data['ip'];
+        let ip = data['ip_addr'];
         dispatch({type: 'GOT_IP', ip});
         fetch(BASE_URL + "/queryUser", {
             method: 'POST',
